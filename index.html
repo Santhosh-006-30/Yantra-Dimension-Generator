@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yantra Dimension Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <div class="max-w-4xl mx-auto py-10">
+    <h1 class="text-3xl font-bold text-center mb-6">🕉️ Yantra Dimension Generator</h1>
+
+    <!-- Input Form -->
+    <form method="POST" class="bg-white p-6 rounded-2xl shadow-md mb-8">
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <label class="block mb-2 font-medium">Latitude (°)</label>
+          <input type="number" step="0.0001" name="lat" required class="w-full border rounded-lg p-2">
+        </div>
+        <div>
+          <label class="block mb-2 font-medium">Longitude (°)</label>
+          <input type="number" step="0.0001" name="lon" required class="w-full border rounded-lg p-2">
+        </div>
+      </div>
+      <button class="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Generate</button>
+    </form>
+
+    <!-- Report Output -->
+    {% if report %}
+    <div class="bg-white p-6 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4">Results for Lat {{lat}}, Lon {{lon}}</h2>
+      <div class="grid gap-6">
+        {% for r in report %}
+        <div class="p-4 border rounded-lg hover:shadow-md">
+          <h3 class="text-xl font-bold text-indigo-600">{{ r.type }}</h3>
+          <ul class="mt-2 text-gray-700">
+            {% for k,v in r.items() %}
+              {% if k != 'type' %}
+              <li><span class="font-medium">{{k}}:</span> {{v}}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
