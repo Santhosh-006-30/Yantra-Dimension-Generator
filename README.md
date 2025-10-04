@@ -17,3 +17,18 @@ yantra-dimension-generator/
 │   └── index.html         # Frontend UI
 │── static/
 │   └── (optional assets)  # Tailwind (if not using CDN)
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/yantra-dimension-generator.git
+   cd yantra-dimension-generator
+
+2. Create virtual environment & install dependencies:
+python -m venv venv
+source venv/bin/activate   # (Linux/Mac)
+venv\Scripts\activate      # (Windows)
+pip install -r requirements.txt
+
+3. Run the app:
+python app.py
+
