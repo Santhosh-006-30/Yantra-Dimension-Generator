@@ -20,7 +20,7 @@ yantra-dimension-generator/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/yantra-dimension-generator.git
+   git clone https://github.com/Santhosh-006-30/yantra-dimension-generator.git
    cd yantra-dimension-generator
 
 2. Create virtual environment & install dependencies:
